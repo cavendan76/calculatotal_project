@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="./assets/favicon/favicon.png" />
+    <link rel="stylesheet" href="./assets/css/normalize.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Calcula Total</title>
+  </head>
+  <body>
+    <div class="card">
+      <div>
+        <img src="assets/imgs/amd.jpg" alt="laptop" />
+      </div>
+      <div>
+        <h3>Laptop Gamer AMD</h3>
+      </div>
+      <div>
+        Cantidad:
+        <input id="numero" type="number" min="1" max="19" size="14" />
+      </div>
+      <div>
+        Color:
+        <select id="selector">
+          <option></option>
+          <option value="black">Negro</option>
+          <option value="red">Rojo</option>
+          <option value="blue">Azul</option>
+          <option value="grey">Gris</option>
+          <option value="green">Verde</option>
+          <option value="violet">Violeta</option>
+        </select>
+      </div>
+      <div>Precio: $ <span id="precio">140000</span></div>
+      <div>
+        <button
+          class="boton"
+          onclick="
+          precio = document.querySelector('#precio');
+          cantidad = document.querySelector('#numero');
+          color = document.querySelector('#selector');  
+
+          precioTotal = document.querySelector('#precio-total');
+          precioTotal.innerHTML = (Number(precio.innerHTML) * cantidad.value).toLocaleString();
+
+          cantTotal = document.querySelector('#cant-total');
+          cantTotal.innerHTML = cantidad.value;
+
+          colorCompra = document.querySelector('.colores');
+          colorCompra.style.backgroundColor = color.value;
+          "
+        >
+          Calcula Total
+        </button>
+      </div>
+    </div>
+    <div class="total-calculado">
+      <p>Total Calculado: $ <span id="precio-total">0</span></p>
+      <p>Cantidad: <span id="cant-total"></span></p>
+      <div class="colores"></div>
+    </div>
+  </body>
+</html>
